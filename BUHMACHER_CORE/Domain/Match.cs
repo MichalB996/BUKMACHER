@@ -7,6 +7,6 @@ namespace BUKMACHER_CORE.Domain
     {
         public Guid Id { get; protected set; }
         public IEnumerable<Team> Teams { get; protected set; }
-        public int CourseOn;
+        public IEnumerable<int> Courses { get; protected set; }
     }
 }

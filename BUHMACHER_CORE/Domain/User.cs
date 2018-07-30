@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BUKMACHER_CORE.Domain
 {
-    class User
+    public class User
     {
         public Guid Id { get; protected set; }
         public string Email { get; protected set; }
@@ -21,7 +21,7 @@ namespace BUKMACHER_CORE.Domain
         public User (string email, string username, string password, string salt)
         {
             Id = Guid.NewGuid();
-            Email = email;
+            Email = email.ToLowerInvariant();
             Username = username;
             Salt = salt;
             CreatedAt = DateTime.Now;
