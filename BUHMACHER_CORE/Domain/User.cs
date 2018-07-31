@@ -15,9 +15,7 @@ namespace BUKMACHER_CORE.Domain
         public DateTime CreatedAt { get; protected set; }
 
         protected User()
-        {
-
-        }
+        {}
         public User (string email, string username, string password, string salt)
         {
             Id = Guid.NewGuid();

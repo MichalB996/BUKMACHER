@@ -2,6 +2,6 @@
 {
     public class Bukmacher
     {
-        public string Bukmacher_name { get; protected set; }
+        public string BukmacherName { get; protected set; }
     }
 }

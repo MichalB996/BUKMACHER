@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BUHMACHER_CORE\BUKMACHER_CORE.csproj" />
   </ItemGroup>
 
