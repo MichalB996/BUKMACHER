@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BUKMACHER_CORE.Repositories;
+using BUKMACHER_INFRASTRUCTURE.Repositories;
 using BUKMACHER_INFRASTRUCTURE.Services;
 using BUKMACHER_INFRASTRUCTURE.UserRepository;
 using Microsoft.AspNetCore.Builder;
@@ -24,6 +25,7 @@ namespace BUCHMACHER_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IBukmacherRepository, InMemoryBukmacherRepository>();
             services.AddScoped<IUserRepository, InMemoryUserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddMvc();
