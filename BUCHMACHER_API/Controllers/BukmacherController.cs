@@ -23,3 +23,4 @@ namespace BUKMACHER_API.Controllers
             => _bukmacherService.Get(name);
     }
 }
+

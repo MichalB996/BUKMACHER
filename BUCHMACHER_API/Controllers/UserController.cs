@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BUKMACHER_INFRASTRUCTURE.Commands.User;
 using BUKMACHER_INFRASTRUCTURE.DTO;
 using BUKMACHER_INFRASTRUCTURE.Services;
 using Microsoft.AspNetCore.Http;
@@ -21,28 +22,11 @@ namespace BUKMACHER_API.Controllers
         [HttpGet("{email}")]
         public UserDTO Get(string email)
             => _userService.Get(email);
-    }
-}
-/*
-
-    public class AccountController : ApiControllerBase
-    {
-        private readonly IJwtHandler _jwtHandler;
-        
-        public AccountController(ICommandDispatcher commandDispatcher, IJwtHandler jwtHandler) 
-            : base(commandDispatcher)
+        [HttpPost("")]
+        public void Post([FromBody]CreateUser request)
         {
-            _jwtHandler= jwtHandler;
+            _userService.Register(request.Email,request.Password,request.Username);
         }
-
-        [HttpPut]
-        [Route("password")]
-        public async Task<IActionResult> Put([FromBody]ChangeUserPassword command)
-        {
-            await DispatchAsync(command);
-
-            return NoContent();
-        }        
     }
 }
-*/
+

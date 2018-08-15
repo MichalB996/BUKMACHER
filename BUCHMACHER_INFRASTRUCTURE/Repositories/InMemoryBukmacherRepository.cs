@@ -11,7 +11,7 @@ namespace BUKMACHER_INFRASTRUCTURE.Repositories
     {
         private static ISet<Bukmacher> _bukmachers = new HashSet<Bukmacher>()
         {
-            new Bukmacher("Fort"),
+            Bukmacher.Create("Fic")
         };
 
         public void Add(Bukmacher bukmacher)
@@ -20,7 +20,8 @@ namespace BUKMACHER_INFRASTRUCTURE.Repositories
         }
 
         public Bukmacher Get(string bukmachername)
-        => _bukmachers.Single(x => x.BukmacherName == bukmachername.ToLowerInvariant());
+            => _bukmachers.Single(x => x.BukmacherName == bukmachername);
+        //=> _bukmachers.Single(x => x.BukmacherName == bukmachername.ToLowerInvariant());
 
         public Bukmacher Get(Guid Id)
         => _bukmachers.Single(x => x.Id == Id);
@@ -32,7 +33,6 @@ namespace BUKMACHER_INFRASTRUCTURE.Repositories
         {
             var bukmacher = Get(id);
             _bukmachers.Remove(bukmacher);
-
         }
 
         public void Update(Guid id)

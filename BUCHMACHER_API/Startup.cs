@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BUKMACHER_CORE.Repositories;
+using BUKMACHER_INFRASTRUCTURE.Mappers;
 using BUKMACHER_INFRASTRUCTURE.Repositories;
 using BUKMACHER_INFRASTRUCTURE.Services;
 using BUKMACHER_INFRASTRUCTURE.UserRepository;
@@ -25,6 +26,8 @@ namespace BUCHMACHER_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(AutoMapperConfig.Initialize());
+            services.AddScoped<IBukmacherService, BukmacherService>();
             services.AddScoped<IBukmacherRepository, InMemoryBukmacherRepository>();
             services.AddScoped<IUserRepository, InMemoryUserRepository>();
             services.AddScoped<IUserService, UserService>();
@@ -50,8 +53,8 @@ namespace BUCHMACHER_API
             {
                 routes.MapRoute(
                     name: "default",
-                    //template: "{controller=Home}/{action=Index}/{id?}");
-                    template: "{controller=User}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
+                    //template: "{controller=User}/{action=Index}/{id?}");
             });
         }
     }

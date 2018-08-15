@@ -9,10 +9,12 @@ namespace BUKMACHER_CORE.Domain
         public string TeamName { get; protected set; }
         public IEnumerable<string> MatchHistory { get; protected set; }
 
-        public Team(string name, IEnumerable<string> history)
+        protected Team(string name, IEnumerable<string> history)
         {
             TeamName = name;
             MatchHistory = history;
         }
+        public static Team Create(string name, IEnumerable<string> history)
+            => new Team(name, history);
     }
 }

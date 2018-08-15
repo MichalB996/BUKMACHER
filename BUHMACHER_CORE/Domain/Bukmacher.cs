@@ -7,15 +7,27 @@ namespace BUKMACHER_CORE.Domain
         public string BukmacherName { get; protected set; }
         public Guid Id { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
+        public DateTime UpdatedAt { get; protected set; }
 
         protected Bukmacher()
         {}
-        public Bukmacher(string bukmachername)
+        protected Bukmacher(string bukmachername)
         {
             Id = Guid.NewGuid();
+            //BukmacherName = bukmachername.ToLowerInvariant();
             BukmacherName = bukmachername;
             CreatedAt = DateTime.UtcNow;
         }
+        protected void SetBukmacherName(string BName)
+        {
+            if (string.IsNullOrWhiteSpace(BName))
+                throw new Exception("Your BukmacherName is invalid!");
+            BukmacherName = BName;
+            UpdatedAt = DateTime.UtcNow;
+
+        }
+        public static Bukmacher Create(string name)
+            => new Bukmacher(name);
 
     }
 }

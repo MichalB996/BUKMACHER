@@ -16,14 +16,15 @@ namespace BUKMACHER_CORE.Domain
 
         protected Voucher()
         {}
-        public Voucher(IDictionary<Match, int> matches, int tax, Bukmacher bukmacher, int cash)
+        protected Voucher(IDictionary<Match, int> matches, int tax, Bukmacher bukmacher, int cash)
         {
             CashIn = cash;
             Matches = matches;
             Id = Guid.NewGuid();
             Tax = tax;
             Bukmacher = bukmacher;
-            GenerateCashToGet();
+            //Matches = new IDictionary<Match, int>();
+            //GenerateCashToGet();
         }
         public void GenerateCashToGet()
         {
@@ -33,6 +34,12 @@ namespace BUKMACHER_CORE.Domain
             }
             CashToGet = TotalCourse * CashIn;
         }
+        public void AddMatch(Match match,int course)
+        {
+            Matches.Add(match, course);
+        }
+        public static Voucher Create(IDictionary<Match, int> matches, int tax, Bukmacher bukmacher, int cash)
+            => new Voucher(matches, tax, bukmacher, cash);
 
     }
 }

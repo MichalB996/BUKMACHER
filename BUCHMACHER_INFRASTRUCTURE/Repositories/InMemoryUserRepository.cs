@@ -15,7 +15,8 @@ namespace BUKMACHER_INFRASTRUCTURE.UserRepository
         {
             new User("mail1@gmail.com","nazwa1","dupa","salt"),
             new User("mail2@gmail.com","nazwa2","dupa","salt"),
-            new User("mail3@gmail.com","nazwa3","dupa","salt")
+            new User("sebek1113@gmail.com","ChujCiWDupie","ehehehe","salt"),
+            new User("oktawia.sepiol@gmail.com","OktawiaKochaMichala","haslo123","salt")
         };
         public void Add(User user)
         {
