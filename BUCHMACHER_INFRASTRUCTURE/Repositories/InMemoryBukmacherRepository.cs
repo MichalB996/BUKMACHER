@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BUKMACHER_INFRASTRUCTURE.Repositories
 {
@@ -14,30 +15,33 @@ namespace BUKMACHER_INFRASTRUCTURE.Repositories
             Bukmacher.Create("Fic")
         };
 
-        public void Add(Bukmacher bukmacher)
+        public async Task AddAsync(Bukmacher bukmacher)
         {
             _bukmachers.Add(bukmacher);
         }
 
-        public Bukmacher Get(string bukmachername)
-            => _bukmachers.Single(x => x.BukmacherName == bukmachername);
+        public async Task<Bukmacher> GetAsync(string bukmachername)
+            => await Task.FromResult(_bukmachers.Single(x => x.BukmacherName == bukmachername));
         //=> _bukmachers.Single(x => x.BukmacherName == bukmachername.ToLowerInvariant());
 
-        public Bukmacher Get(Guid Id)
-        => _bukmachers.Single(x => x.Id == Id);
+        public async Task<Bukmacher> GetAsync(Guid Id)
+        => await Task.FromResult(_bukmachers.Single(x => x.Id == Id));
 
-        public IEnumerable<Bukmacher> GetAll()
-        => _bukmachers;
+        public async Task<IEnumerable<Bukmacher>> GetAllAsync()
+        => await Task.FromResult(_bukmachers);
 
-        public void Remove(Guid id)
+        public async Task RemoveAsync(Guid id)
         {
-            var bukmacher = Get(id);
+            var bukmacher = await GetAsync(id);
             _bukmachers.Remove(bukmacher);
+            await Task.CompletedTask;
         }
 
-        public void Update(Guid id)
-        {}
-       
+        public async Task UpdateAsync(Guid id)
+        {
+            await Task.CompletedTask;
+        }
+
     }
 }
 

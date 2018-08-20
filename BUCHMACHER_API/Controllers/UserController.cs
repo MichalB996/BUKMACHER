@@ -20,12 +20,12 @@ namespace BUKMACHER_API.Controllers
             _userService = userService;
         }
         [HttpGet("{email}")]
-        public UserDTO Get(string email)
-            => _userService.Get(email);
+        public async Task<UserDTO> Get(string email)
+            => await _userService.GetAsync(email);
         [HttpPost("")]
-        public void Post([FromBody]CreateUser request)
+        public async Task Post([FromBody]CreateUser request)
         {
-            _userService.Register(request.Email,request.Password,request.Username);
+            await _userService.RegisterAsync(request.Email,request.Password,request.Username);
         }
     }
 }

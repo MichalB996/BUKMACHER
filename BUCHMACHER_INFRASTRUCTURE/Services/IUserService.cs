@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BUKMACHER_INFRASTRUCTURE.Services
 {
     public interface IUserService
     {
-        void Register(string email, string password, string username);
-        UserDTO Get(string email);
+        Task RegisterAsync(string email, string password, string username);
+        Task<UserDTO> GetAsync(string email);
     }
 }

@@ -19,8 +19,8 @@ namespace BUKMACHER_API.Controllers
             _bukmacherService = bukmacherService;
         }
         [HttpGet("{name}")]
-        public BukmacherDTO Get(string name)
-            => _bukmacherService.Get(name);
+        public async Task<BukmacherDTO> Get(string name)
+            => await _bukmacherService.GetAsync(name);
     }
 }
 

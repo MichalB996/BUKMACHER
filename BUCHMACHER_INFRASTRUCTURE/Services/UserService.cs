@@ -5,6 +5,7 @@ using BUKMACHER_INFRASTRUCTURE.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BUKMACHER_INFRASTRUCTURE.Services
 {
@@ -19,22 +20,23 @@ namespace BUKMACHER_INFRASTRUCTURE.Services
 
         }
 
-        public UserDTO Get(string email)
+        public async Task<UserDTO> GetAsync(string email)
         {
-            var user = _userRepository.Get(email);
-            return _mapper.Map<User, UserDTO>(user);
+            var user = await _userRepository.GetAsync(email);
+            return await Task.FromResult(_mapper.Map<User, UserDTO>(user));
         }
 
-        public void Register(string email, string password, string username)
+        public async Task RegisterAsync(string email, string password, string username)
         {
-            var user = _userRepository.Get(email);
+            var user = await _userRepository.GetAsync(email);
             if(user != null)
             {
                 throw new Exception($"User with email: {email} already exists.");
             }
             var salt = Guid.NewGuid().ToString("N");
             user = new User(email, password, username,salt);
-            _userRepository.Add(user);
+            await _userRepository.AddAsync(user);
+            await Task.CompletedTask;
         }
     }
 }

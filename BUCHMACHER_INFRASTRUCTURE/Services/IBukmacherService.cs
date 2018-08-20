@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BUKMACHER_INFRASTRUCTURE.Services
 {
     public interface IBukmacherService
     {
-        void Register(string name);
-        BukmacherDTO Get(string email);
+        Task RegisterAsync(string name);
+        Task<BukmacherDTO> GetAsync(string email);
     }
 }
