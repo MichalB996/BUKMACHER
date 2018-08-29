@@ -20,13 +20,22 @@ namespace BUKMACHER_API.Controllers
             _userService = userService;
         }
         [HttpGet("{email}")]
-        public async Task<UserDTO> Get(string email)
-            => await _userService.GetAsync(email);
+        public async Task<IActionResult> Get(string email)
+        {
+            var user = _userService.GetAsync(email);
+            if (user == null)
+                return NotFound("User not found!");
+            return Json(user);
+        }
         [HttpPost("")]
-        public async Task Post([FromBody]CreateUser request)
+        public async Task<IActionResult> Post([FromBody]CreateUser request)
         {
             await _userService.RegisterAsync(request.Email,request.Password,request.Username);
+
+
+            return Created($"user/{request.Email}", new object());
         }
     }
 }
+
 
