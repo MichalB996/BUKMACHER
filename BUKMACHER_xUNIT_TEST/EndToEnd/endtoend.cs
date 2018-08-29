@@ -1,11 +1,13 @@
 ﻿using BUCHMACHER_API;
 using BUKMACHER_CORE.Domain;
+using BUKMACHER_INFRASTRUCTURE.Commands.User;
 using BUKMACHER_INFRASTRUCTURE.DTO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,5 +47,26 @@ namespace BUKMACHERT_TESTS.EndToEnd
             var user = JsonConvert.DeserializeObject<UserDTO>(responseString);
             Assert.NotEqual(email, user.Email);
         }
+        [Fact]
+        public async Task given_unique_email_user_should_be_created()
+        {
+            var request = new CreateUser
+            {
+                Email = "email10@gmail.com",
+                Username = "dupa",
+                Password = "heszkewmeszke"
+            };
+            var payload = GetPayLoad(request);
+
+            var response = await Client.PostAsync("User", payload);
+            response.StatusCode.Equals(HttpStatusCode.Created);
+            response.Headers.ToString().Equals($"User/{request.Email}");
+        }
+
+        public static StringContent GetPayLoad(object data)
+        {
+            var json = JsonConvert.SerializeObject(data);
+            return new StringContent(json, Encoding.UTF8, "application/json");
+        } 
     }
 }

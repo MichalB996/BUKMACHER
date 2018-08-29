@@ -6,8 +6,7 @@ namespace BUKMACHER_INFRASTRUCTURE.DTO
 {
     public class UserDTO
     {
-        //public Guid Id { get; set; }
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
         public string FullName { get; set; }
