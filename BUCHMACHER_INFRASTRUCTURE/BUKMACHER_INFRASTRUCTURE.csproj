@@ -11,6 +11,8 @@
   <ItemGroup>
     <PackageReference Include="Acheve.AspNetCore.TestHost.Security" Version="2.0.0" />
     <PackageReference Include="Acheve.TestHost" Version="1.4.0" />
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
     <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
     <PackageReference Include="Moq" Version="4.9.0" />

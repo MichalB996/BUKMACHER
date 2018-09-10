@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using BUKMACHER_CORE.Repositories;
+using BUKMACHER_INFRASTRUCTURE.IoC.Modules;
 using BUKMACHER_INFRASTRUCTURE.Mappers;
 using BUKMACHER_INFRASTRUCTURE.Repositories;
 using BUKMACHER_INFRASTRUCTURE.Services;
@@ -22,9 +25,11 @@ namespace BUCHMACHER_API
         }
 
         public IConfiguration Configuration { get; }
+        public IContainer ApplicationContainer { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        //public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddScoped<IBukmacherService, BukmacherService>();
@@ -32,10 +37,17 @@ namespace BUCHMACHER_API
             services.AddScoped<IUserRepository, InMemoryUserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddMvc();
+
+            var builder = new ContainerBuilder();
+            builder.RegisterModule<CommandModule>();
+            builder.Populate(services);
+            ApplicationContainer = builder.Build();
+
+            return new AutofacServiceProvider(ApplicationContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime appLifetime)
         {
             if (env.IsDevelopment())
             {
@@ -56,6 +68,8 @@ namespace BUCHMACHER_API
                     template: "{controller=Home}/{action=Index}/{id?}");
                     //template: "{controller=User}/{action=Index}/{id?}");
             });
+
+            appLifetime.ApplicationStopped.Register(() => ApplicationContainer.Dispose());
         }
     }
 }

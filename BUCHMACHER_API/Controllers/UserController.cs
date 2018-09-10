@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BUKMACHER_CORE.Domain;
+using BUKMACHER_INFRASTRUCTURE.Commands;
 using BUKMACHER_INFRASTRUCTURE.Commands.User;
 using BUKMACHER_INFRASTRUCTURE.DTO;
 using BUKMACHER_INFRASTRUCTURE.Services;
@@ -16,8 +17,10 @@ namespace BUKMACHER_API.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly ICommandDispatcher _commandDispatcher;
+        public UserController(IUserService userService, ICommandDispatcher commandDispatcher)
         {
+            _commandDispatcher = commandDispatcher;
             _userService = userService;
         }
         [HttpGet("{email}")]
@@ -29,12 +32,11 @@ namespace BUKMACHER_API.Controllers
             return Json(user);
         }
         [HttpPost("")]
-        public async Task<IActionResult> Post([FromBody]CreateUser request)
+        public async Task<IActionResult> Post([FromBody]CreateUser command)
         {
-            await _userService.RegisterAsync(request.Email,request.Password,request.Username);
+            await _commandDispatcher.DispatchAsync(command);
 
-
-            return Created($"user/{request.Email}", new object());
+            return Created($"user/{command.Email}", new object());
         }
     }
 }
