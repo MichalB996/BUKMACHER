@@ -13,14 +13,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace BUKMACHER_API.Controllers
 {
     //[Produces("application/json")]
-    [Route("[controller]")]
-    public class UserController : Controller
+    
+    public class UserController : ApiControllerBase
     {
         private readonly IUserService _userService;
-        private readonly ICommandDispatcher _commandDispatcher;
-        public UserController(IUserService userService, ICommandDispatcher commandDispatcher)
+        public UserController(IUserService userService, ICommandDispatcher commandDispatcher) : base(commandDispatcher)
         {
-            _commandDispatcher = commandDispatcher;
             _userService = userService;
         }
         [HttpGet("{email}")]
@@ -34,10 +32,10 @@ namespace BUKMACHER_API.Controllers
         [HttpPost("")]
         public async Task<IActionResult> Post([FromBody]CreateUser command)
         {
-            await _commandDispatcher.DispatchAsync(command);
-
+            await CommandDispatcher.DispatchAsync(command);
             return Created($"user/{command.Email}", new object());
         }
+
     }
 }
 
