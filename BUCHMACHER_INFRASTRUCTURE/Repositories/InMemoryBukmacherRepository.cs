@@ -22,7 +22,6 @@ namespace BUKMACHER_INFRASTRUCTURE.Repositories
 
         public async Task<Bukmacher> GetAsync(string bukmachername)
             => await Task.FromResult(_bukmachers.Single(x => x.BukmacherName == bukmachername));
-        //=> _bukmachers.Single(x => x.BukmacherName == bukmachername.ToLowerInvariant());
 
         public async Task<Bukmacher> GetAsync(Guid Id)
         => await Task.FromResult(_bukmachers.Single(x => x.Id == Id));
@@ -41,7 +40,6 @@ namespace BUKMACHER_INFRASTRUCTURE.Repositories
         {
             await Task.CompletedTask;
         }
-
     }
 }
 

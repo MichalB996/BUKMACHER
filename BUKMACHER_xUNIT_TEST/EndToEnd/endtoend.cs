@@ -42,12 +42,9 @@ namespace BUKMACHERT_TESTS.EndToEnd
         {
             var email = "mail100@gmail.com";
             var response = await Client.GetAsync($"User/{email}");
-            //response.EnsureSuccessStatusCode();
-
-            //var responseString = await response.Content.ReadAsStringAsync();
-            //var user = JsonConvert.DeserializeObject<UserDTO>(responseString);
             Assert.Equal(response.StatusCode, HttpStatusCode.NotFound);
         }
+
         [Fact]
         public async Task given_unique_email_user_should_be_created()
         {

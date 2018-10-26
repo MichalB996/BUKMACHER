@@ -7,10 +7,8 @@ using BUKMACHER_INFRASTRUCTURE.Commands;
 
 namespace BUKMACHER_INFRASTRUCTURE.IoC.Modules
 {
-    //All configurationfor IoC controller.
     public class CommandModule : Autofac.Module
     {
-        // In this class we get the information what is the type of command.
         protected override void Load(ContainerBuilder builder)
         {
             var assembly = typeof(CommandModule).GetTypeInfo().Assembly;

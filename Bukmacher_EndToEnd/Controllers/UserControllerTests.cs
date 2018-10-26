@@ -22,7 +22,6 @@ using Acheve.AspNetCore.TestHost;
 using Acheve.TestHost;
 
 
-
 namespace Bukmacher_EndToEnd.Controllers
 {
     public class UserControllerTests
@@ -36,7 +35,6 @@ namespace Bukmacher_EndToEnd.Controllers
                           .UseStartup<Startup>());
             Client = Server.CreateClient();
         }
-
         [Fact]
         public async Task given_invalid_email_user_should_exists()
         {

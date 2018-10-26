@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BUKMACHER_API.Controllers
 {
-    //[Produces("application/json")]
     [Route("[controller]")]
     public class BukmacherController : Controller
     {

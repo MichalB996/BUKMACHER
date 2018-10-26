@@ -14,7 +14,6 @@ namespace BUKMACHER_CORE.Domain
         protected Bukmacher(string bukmachername)
         {
             Id = Guid.NewGuid();
-            //BukmacherName = bukmachername.ToLowerInvariant();
             BukmacherName = bukmachername;
             CreatedAt = DateTime.UtcNow;
         }
@@ -24,10 +23,8 @@ namespace BUKMACHER_CORE.Domain
                 throw new Exception("Your BukmacherName is invalid!");
             BukmacherName = BName;
             UpdatedAt = DateTime.UtcNow;
-
         }
         public static Bukmacher Create(string name)
             => new Bukmacher(name);
-
     }
 }

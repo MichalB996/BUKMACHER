@@ -36,8 +36,6 @@ namespace BUKMACHER_INFRASTRUCTURE.Services
             bukmacher = Bukmacher.Create(name);
             await _bukmacherRepository.AddAsync(bukmacher);
             await Task.CompletedTask;
-        }
-
-        
+        }        
     }
 }

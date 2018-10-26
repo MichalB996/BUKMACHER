@@ -8,6 +8,5 @@ namespace BUKMACHER_INFRASTRUCTURE.Commands.User
     {
         public string CurrentPassword { get; set; }
         public string NewPassword { get; set; }
-
     }
 }

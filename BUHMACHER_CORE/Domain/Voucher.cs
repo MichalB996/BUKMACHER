@@ -6,7 +6,6 @@ namespace BUKMACHER_CORE.Domain
     public class Voucher
     {
         public Guid Id { get; protected set; }
-        // public IEnumerable<Match, int> Matches { get; protected set; }
         public IDictionary<Match, int> Matches;
         public int CashToGet { get; protected set; }
         public int Tax { get; protected set; }
@@ -23,8 +22,6 @@ namespace BUKMACHER_CORE.Domain
             Id = Guid.NewGuid();
             Tax = tax;
             Bukmacher = bukmacher;
-            //Matches = new IDictionary<Match, int>();
-            //GenerateCashToGet();
         }
         public void GenerateCashToGet()
         {
@@ -40,6 +37,5 @@ namespace BUKMACHER_CORE.Domain
         }
         public static Voucher Create(IDictionary<Match, int> matches, int tax, Bukmacher bukmacher, int cash)
             => new Voucher(matches, tax, bukmacher, cash);
-
     }
 }

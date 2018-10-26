@@ -12,8 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BUKMACHER_API.Controllers
 {
-    //[Produces("application/json")]
-    
+
     public class UserController : ApiControllerBase
     {
         private readonly IUserService _userService;

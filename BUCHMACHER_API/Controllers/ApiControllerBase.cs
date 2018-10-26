@@ -15,8 +15,6 @@ namespace BUKMACHER_API.Controllers
         protected ApiControllerBase(ICommandDispatcher commandDispatcher)
         {
             CommandDispatcher = commandDispatcher;
-        }
-        
-       
+        } 
     }
 }

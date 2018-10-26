@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace BUKMACHER_INFRASTRUCTURE.Handlers.Users
 {
-    // Defining flow for all buisness logic.
     class CreateUserHandler : ICommandHandler<CreateUser>
     {
         private readonly IUserService _userService;
@@ -17,7 +16,6 @@ namespace BUKMACHER_INFRASTRUCTURE.Handlers.Users
         {
             _userService = userService;
         }
-
         public async Task HandleAsync(CreateUser command)
         {
             await _userService.RegisterAsync(command.Email, command.Password, command.Username);

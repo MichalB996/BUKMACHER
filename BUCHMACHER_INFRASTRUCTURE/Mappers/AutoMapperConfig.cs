@@ -15,6 +15,5 @@ namespace BUKMACHER_INFRASTRUCTURE.Mappers
                 cfg.CreateMap<Bukmacher, BukmacherDTO>();
                 }
                 ).CreateMapper();
-
     }
 }

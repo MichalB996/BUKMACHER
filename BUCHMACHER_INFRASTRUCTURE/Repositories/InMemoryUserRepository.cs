@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BUKMACHER_INFRASTRUCTURE.UserRepository
 {
-    public class InMemoryUserRepository : IUserRepository//BUKMACHER_CORE.Repositories.IUserRepository
+    public class InMemoryUserRepository : IUserRepository
     {
         private static ISet<User> _users = new HashSet<User>()
         {

@@ -26,7 +26,6 @@ namespace BUKMACHER_CORE.Domain
             Email = email.ToLowerInvariant();
             Password = password;
             Salt = salt;
-
         }
         public void SetUsername(string username)
         {
@@ -56,10 +55,5 @@ namespace BUKMACHER_CORE.Domain
             FullName = fullname;
             UpdatedAt = DateTime.UtcNow;
         }
-        /*
-            public static Player Create(string username, string email, string password, string salt)
-                => new Player(username,email,password,salt)
-         */
-
     }
 }
