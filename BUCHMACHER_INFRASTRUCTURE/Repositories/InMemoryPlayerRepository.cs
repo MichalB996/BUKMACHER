@@ -1,12 +1,11 @@
-﻿using BUKMACHER_CORE.Domain;
-using BUKMACHER_CORE.Repositories;
+﻿using SportsBetting.Core.Domain;
+using SportsBetting.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.Repositories
+namespace SportsBetting.Infrastructure.Repositories
 {
     class InMemoryPlayerRepository : IPlayerRepository
     {

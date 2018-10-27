@@ -23,10 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BUCHMACHER_API\BUKMACHER_API.csproj" />
-    <ProjectReference Include="..\BUCHMACHER_INFRASTRUCTURE\BUKMACHER_INFRASTRUCTURE.csproj" />
-    <ProjectReference Include="..\BUHMACHER_CORE\BUKMACHER_CORE.csproj" />
-    <ProjectReference Include="..\Bukmacher_EndToEnd\Bukmacher_EndToEnd.csproj" />
+    <ProjectReference Include="..\BUCHMACHER_API\SportsBetting.Api.csproj" />
+    <ProjectReference Include="..\BUCHMACHER_INFRASTRUCTURE\SportsBetting.Infrastructure.csproj" />
+    <ProjectReference Include="..\BUHMACHER_CORE\SportsBetting.Core.csproj" />
+    <ProjectReference Include="..\Bukmacher_EndToEnd\SportsBetting.EndToEnd.csproj" />
   </ItemGroup>
 
 </Project>

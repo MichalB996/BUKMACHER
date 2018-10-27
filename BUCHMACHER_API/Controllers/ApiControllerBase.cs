@@ -1,11 +1,7 @@
-﻿using BUKMACHER_INFRASTRUCTURE.Commands;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using SportsBetting.Infrastructure.Commands;
 
-namespace BUKMACHER_API.Controllers
+namespace SportsBetting.Controllers
 {
     [Route("[controller]")]
     public abstract class ApiControllerBase : Controller

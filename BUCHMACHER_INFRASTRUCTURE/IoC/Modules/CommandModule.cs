@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Autofac;
+using SportsBetting.Infrastructure.Commands;
 using System.Reflection;
-using System.Text;
-using Autofac;
-using BUKMACHER_INFRASTRUCTURE.Commands;
 
-namespace BUKMACHER_INFRASTRUCTURE.IoC.Modules
+namespace SportsBetting.Infrastructure.IoC.Modules
 {
     public class CommandModule : Autofac.Module
     {

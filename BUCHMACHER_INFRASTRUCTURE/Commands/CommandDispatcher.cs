@@ -1,18 +1,18 @@
 ﻿using Autofac;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.Commands
+namespace SportsBetting.Infrastructure.Commands
 {
     class CommandDispatcher : ICommandDispatcher
     {
         private readonly IComponentContext _context;
+
         public CommandDispatcher(IComponentContext context)
         {
             _context = context;
         }
+
         public async Task DispatchAsync<T>(T command) where T : ICommand
         {
             if(command == null)

@@ -1,13 +1,10 @@
-﻿using BUKMACHER_INFRASTRUCTURE.Commands;
-using BUKMACHER_INFRASTRUCTURE.Commands.User;
-using BUKMACHER_INFRASTRUCTURE.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
+using SportsBetting.Infrastructure.Commands;
+using SportsBetting.Infrastructure.Commands.User;
+using SportsBetting.Infrastructure.Services;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_API.Controllers
+namespace SportsBetting.Controllers
 {
     public class AccountController : ApiControllerBase
     {

@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace SportsBetting.Core.Repositories
 {
-    public interface IPlayerRepository
+    public interface IBookmakerRepository
     {
-        Task<Player> GetAsync(string email);
-        Task<Player> GetAsync(Guid Id);
-        Task AddAsync(Player user);
+        Task<Bookmaker> GetAsync(string email);
+        Task<Bookmaker> GetAsync(Guid Id);
+        Task AddAsync(Bookmaker user);
         Task RemoveAsync(Guid id);
         Task UpdateAsync(Guid id);
-        Task<IEnumerable<Player>> GetAllAsync();
+        Task<IEnumerable<Bookmaker>> GetAllAsync();
     }
 }

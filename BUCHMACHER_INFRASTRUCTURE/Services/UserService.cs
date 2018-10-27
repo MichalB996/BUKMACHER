@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
-using BUKMACHER_CORE.Domain;
-using BUKMACHER_CORE.Repositories;
-using BUKMACHER_INFRASTRUCTURE.DTO;
+using SportsBetting.Core.Domain;
+using SportsBetting.Core.Repositories;
+using SportsBetting.Infrastructure.DTO;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.Services
+namespace SportsBetting.Infrastructure.Services
 {
     public class UserService : IUserService
     {

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using AutoMapper;
+using Moq;
+using SportsBetting.Core.Domain;
+using SportsBetting.Core.Repositories;
+using SportsBetting.Infrastructure.Services;
 using System.Threading.Tasks;
 using Xunit;
-using NUnit;
-using Moq;
-using BUKMACHER_CORE.Repositories;
-using BUKMACHER_INFRASTRUCTURE.Services;
-using AutoMapper;
-using BUKMACHER_CORE.Domain;
-using BUKMACHER_INFRASTRUCTURE.DTO;
 
-namespace BUKMACHERT_TESTS.Services
+namespace SportsBetting.Test.EndtoEnd.Services
 {
     public class UserServiceTest
     {

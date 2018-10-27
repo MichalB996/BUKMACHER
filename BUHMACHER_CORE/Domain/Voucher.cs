@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace BUKMACHER_CORE.Domain
+namespace SportsBetting.Core.Domain
 
 {
     public class Voucher
@@ -9,20 +9,22 @@ namespace BUKMACHER_CORE.Domain
         public IDictionary<Match, int> Matches;
         public int CashToGet { get; protected set; }
         public int Tax { get; protected set; }
-        public Bukmacher Bukmacher { get; protected set; }
+        public Bookmaker Bookmaker { get; protected set; }
         public int CashIn { get; protected set; }
         public int TotalCourse { get; protected set; }
 
         protected Voucher()
         {}
-        protected Voucher(IDictionary<Match, int> matches, int tax, Bukmacher bukmacher, int cash)
+
+        protected Voucher(IDictionary<Match, int> matches, int tax, Bookmaker bookmaker, int cash)
         {
             CashIn = cash;
             Matches = matches;
             Id = Guid.NewGuid();
             Tax = tax;
-            Bukmacher = bukmacher;
+            Bookmaker = bookmaker;
         }
+
         public void GenerateCashToGet()
         {
             foreach(KeyValuePair<Match,int> match in Matches)
@@ -31,11 +33,13 @@ namespace BUKMACHER_CORE.Domain
             }
             CashToGet = TotalCourse * CashIn;
         }
+
         public void AddMatch(Match match,int course)
         {
             Matches.Add(match, course);
         }
-        public static Voucher Create(IDictionary<Match, int> matches, int tax, Bukmacher bukmacher, int cash)
+
+        public static Voucher Create(IDictionary<Match, int> matches, int tax, Bookmaker bukmacher, int cash)
             => new Voucher(matches, tax, bukmacher, cash);
     }
 }

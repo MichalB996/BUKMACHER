@@ -1,19 +1,16 @@
 ﻿using BUCHMACHER_API;
-using BUKMACHER_CORE.Domain;
-using BUKMACHER_INFRASTRUCTURE.Commands.User;
-using BUKMACHER_INFRASTRUCTURE.DTO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+using SportsBetting.Infrastructure.Commands.User;
+using SportsBetting.Infrastructure.DTO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace BUKMACHERT_TESTS.EndToEnd
+namespace SportsBetting.Test.EndtoEnd.EndToEnd
 {
     public class EndToEnd
     {

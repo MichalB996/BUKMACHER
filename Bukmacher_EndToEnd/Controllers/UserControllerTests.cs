@@ -1,25 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using BUCHMACHER_API;
+﻿using BUCHMACHER_API;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
-using Xunit;
 using Newtonsoft.Json;
-using BUKMACHER_INFRASTRUCTURE.DTO;
-using System.Threading;
-using NUnit;
-using Moq;
-using BUKMACHER_CORE.Repositories;
-using BUKMACHER_INFRASTRUCTURE.Services;
-using AutoMapper;
-using BUKMACHER_CORE.Domain;
-using Microsoft.Net;
-using Acheve.AspNetCore.TestHost;
-using Acheve.TestHost;
+using SportsBetting.Infrastructure.DTO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Xunit;
 
 
 namespace Bukmacher_EndToEnd.Controllers
@@ -35,6 +21,7 @@ namespace Bukmacher_EndToEnd.Controllers
                           .UseStartup<Startup>());
             Client = Server.CreateClient();
         }
+
         [Fact]
         public async Task given_invalid_email_user_should_exists()
         {

@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BUCHMACHER_INFRASTRUCTURE\BUKMACHER_INFRASTRUCTURE.csproj" />
+    <ProjectReference Include="..\BUCHMACHER_INFRASTRUCTURE\SportsBetting.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

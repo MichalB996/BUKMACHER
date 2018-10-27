@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BUKMACHER_INFRASTRUCTURE.DTO
+namespace SportsBetting.Infrastructure.DTO
 {
     public class UserDTO
     {

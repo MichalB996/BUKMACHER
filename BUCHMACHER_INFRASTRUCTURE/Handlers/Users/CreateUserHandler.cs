@@ -1,12 +1,9 @@
-﻿using BUKMACHER_INFRASTRUCTURE.Commands;
-using BUKMACHER_INFRASTRUCTURE.Commands.User;
-using BUKMACHER_INFRASTRUCTURE.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SportsBetting.Infrastructure.Commands;
+using SportsBetting.Infrastructure.Commands.User;
+using SportsBetting.Infrastructure.Services;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.Handlers.Users
+namespace SportsBetting.Infrastructure.Handlers.Users
 {
     class CreateUserHandler : ICommandHandler<CreateUser>
     {
@@ -16,6 +13,7 @@ namespace BUKMACHER_INFRASTRUCTURE.Handlers.Users
         {
             _userService = userService;
         }
+
         public async Task HandleAsync(CreateUser command)
         {
             await _userService.RegisterAsync(command.Email, command.Password, command.Username);

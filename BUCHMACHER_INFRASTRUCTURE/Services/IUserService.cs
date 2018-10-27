@@ -1,10 +1,7 @@
-﻿using BUKMACHER_INFRASTRUCTURE.DTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SportsBetting.Infrastructure.DTO;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.Services
+namespace SportsBetting.Infrastructure.Services
 {
     public interface IUserService
     {

@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using BUKMACHER_CORE.Repositories;
-using BUKMACHER_INFRASTRUCTURE.IoC.Modules;
-using BUKMACHER_INFRASTRUCTURE.Mappers;
-using BUKMACHER_INFRASTRUCTURE.Repositories;
-using BUKMACHER_INFRASTRUCTURE.Services;
-using BUKMACHER_INFRASTRUCTURE.UserRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SportsBetting.Core.Repositories;
+using SportsBetting.Infrastructure.IoC.Modules;
+using SportsBetting.Infrastructure.Mappers;
+using SportsBetting.Infrastructure.Repositories;
+using SportsBetting.Infrastructure.Services;
+using SportsBetting.Infrastructure.UserRepository;
+using System;
 
 namespace BUCHMACHER_API
 {
@@ -28,8 +25,8 @@ namespace BUCHMACHER_API
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(AutoMapperConfig.Initialize());
-            services.AddScoped<IBukmacherService, BukmacherService>();
-            services.AddScoped<IBukmacherRepository, InMemoryBukmacherRepository>();
+            services.AddScoped<IBookmakerService, BookmakerService>();
+            services.AddScoped<IBookmakerRepository, InMemoryBookmakerRepository>();
             services.AddScoped<IUserRepository, InMemoryUserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddMvc();

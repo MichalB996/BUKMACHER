@@ -1,10 +1,9 @@
-﻿using BUKMACHER_CORE.Domain;
+﻿using SportsBetting.Core.Domain;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_CORE.Repositories
+namespace SportsBetting.Core.Repositories
 {
     public interface IUserRepository
     {

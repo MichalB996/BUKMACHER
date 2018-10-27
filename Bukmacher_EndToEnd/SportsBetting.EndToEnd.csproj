@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BUCHMACHER_API\BUKMACHER_API.csproj" />
-    <ProjectReference Include="..\BUCHMACHER_INFRASTRUCTURE\BUKMACHER_INFRASTRUCTURE.csproj" />
+    <ProjectReference Include="..\BUCHMACHER_API\SportsBetting.Api.csproj" />
+    <ProjectReference Include="..\BUCHMACHER_INFRASTRUCTURE\SportsBetting.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

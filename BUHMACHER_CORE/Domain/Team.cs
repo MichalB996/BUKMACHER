@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BUKMACHER_CORE.Domain
+namespace SportsBetting.Core.Domain
 {
     public class Team
     {
@@ -14,6 +14,7 @@ namespace BUKMACHER_CORE.Domain
             TeamName = name;
             MatchHistory = history;
         }
+
         public static Team Create(string name, IEnumerable<string> history)
             => new Team(name, history);
     }

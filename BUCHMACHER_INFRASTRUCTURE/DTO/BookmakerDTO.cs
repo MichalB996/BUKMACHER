@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BUKMACHER_INFRASTRUCTURE.DTO
+namespace SportsBetting.Infrastructure.DTO
 {
-    public class BukmacherDTO
+    public class BookmakerDTO
     {
         public string BukmacherName { get; set; }
         public Guid Id { get; set; }

@@ -1,22 +1,20 @@
-﻿using System;
+﻿using SportsBetting.Core.Domain;
+using SportsBetting.Core.Repositories;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using BUKMACHER_CORE.Domain;
-using BUKMACHER_CORE;
-using BUKMACHER_CORE.Repositories;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.UserRepository
+namespace SportsBetting.Infrastructure.UserRepository
 {
     public class InMemoryUserRepository : IUserRepository
     {
         private static ISet<User> _users = new HashSet<User>()
         {
-            new User("mail1@gmail.com","nazwa1","dupa","salt"),
-            new User("mail2@gmail.com","nazwa2","dupa","salt"),
-            new User("sebek1113@gmail.com","ChujCiWDupie","ehehehe","salt"),
-            new User("oktawia.sepiol@gmail.com","OktawiaKochaMichala","haslo123","salt")
+            new User("mail1@mail.com","name1","password1","salt1"),
+            new User("mail2@mail.com","name2","password2","salt2"),
+            new User("mail3@mail.com","name3","password3","salt3"),
+            new User("mail4@mail.com","name4","password4","salt4")
         };
         public async Task AddAsync(User user)
         {

@@ -1,11 +1,8 @@
-﻿using BUKMACHER_INFRASTRUCTURE.Commands;
-using BUKMACHER_INFRASTRUCTURE.Commands.User;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SportsBetting.Infrastructure.Commands;
+using SportsBetting.Infrastructure.Commands.User;
 using System.Threading.Tasks;
 
-namespace BUKMACHER_INFRASTRUCTURE.Handlers.Users
+namespace SportsBetting.Infrastructure.Handlers.Users
 {
     class ChangeUserPasswordHandler : ICommandHandler<ChangeUserPassword>
     {

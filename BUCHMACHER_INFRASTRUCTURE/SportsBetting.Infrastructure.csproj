@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BUHMACHER_CORE\BUKMACHER_CORE.csproj" />
+    <ProjectReference Include="..\BUHMACHER_CORE\SportsBetting.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BUCHMACHER_API.Models;
 using Microsoft.AspNetCore.Mvc;
-using BUCHMACHER_API.Models;
+using System.Diagnostics;
 
 namespace BUCHMACHER_API.Controllers
 {

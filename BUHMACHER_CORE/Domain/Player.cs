@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BUKMACHER_CORE.Domain
+namespace SportsBetting.Core.Domain
 {
     public class Player
     {
@@ -19,6 +17,7 @@ namespace BUKMACHER_CORE.Domain
 
         protected Player()
         {}
+
         public Player(string username, string email, string password, string salt)
         {
             UserId = Guid.NewGuid();
@@ -27,6 +26,7 @@ namespace BUKMACHER_CORE.Domain
             Password = password;
             Salt = salt;
         }
+
         public void SetUsername(string username)
         {
             if (string.IsNullOrWhiteSpace(username))
@@ -34,6 +34,7 @@ namespace BUKMACHER_CORE.Domain
             Username = username;
             UpdatedAt = DateTime.UtcNow;
         }
+
         public void SetEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -41,6 +42,7 @@ namespace BUKMACHER_CORE.Domain
             Email = email.ToLowerInvariant();
             UpdatedAt = DateTime.UtcNow;
         }
+
         public void SetPassword(string password)
         {
             if (string.IsNullOrWhiteSpace(password))
@@ -48,6 +50,7 @@ namespace BUKMACHER_CORE.Domain
             Password = password;
             UpdatedAt = DateTime.UtcNow;
         }
+
         public void SetFullName(string fullname)
         {
             if (string.IsNullOrWhiteSpace(fullname))
