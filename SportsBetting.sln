@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Api", "BUCHMACHER_API\SportsBetting.Api.csproj", "{6B71CA0C-0220-43EB-8947-9057CD5B07AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Api", "SportsBetting.Api\SportsBetting.Api.csproj", "{6B71CA0C-0220-43EB-8947-9057CD5B07AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Infrastructure", "BUCHMACHER_INFRASTRUCTURE\SportsBetting.Infrastructure.csproj", "{8EA8D489-EBF0-4711-921A-5CB91A067D0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Infrastructure", "SportsBetting.Infrastructure\SportsBetting.Infrastructure.csproj", "{8EA8D489-EBF0-4711-921A-5CB91A067D0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Core", "BUHMACHER_CORE\SportsBetting.Core.csproj", "{309122D2-2F4C-4893-A235-5F48AE34EB07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Core", "SportsBetting.Core\SportsBetting.Core.csproj", "{309122D2-2F4C-4893-A235-5F48AE34EB07}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Test.EndtoEnd", "BUKMACHER_xUNIT_TEST\SportsBetting.Test.EndtoEnd.csproj", "{118C47ED-84C4-45D6-BE93-A32156549DCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.Test.EndtoEnd", "SportsBetting.TestEndtoEnd\SportsBetting.Test.EndtoEnd.csproj", "{118C47ED-84C4-45D6-BE93-A32156549DCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.EndToEnd", "Bukmacher_EndToEnd\SportsBetting.EndToEnd.csproj", "{3D477E33-CFD0-4781-9F09-46893C2E151D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsBetting.EndToEnd", "SportsBetting.EndToEnd\SportsBetting.EndToEnd.csproj", "{3D477E33-CFD0-4781-9F09-46893C2E151D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
