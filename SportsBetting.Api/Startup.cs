@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SportsBetting.Core.Repositories;
+using SportsBetting.Infrastructure.IoC;
 using SportsBetting.Infrastructure.IoC.Modules;
 using SportsBetting.Infrastructure.Mappers;
 using SportsBetting.Infrastructure.Repositories;
@@ -24,15 +25,9 @@ namespace SportsBetting.Api
         }
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton(AutoMapperConfig.Initialize());
-            services.AddScoped<IBookmakerService, BookmakerService>();
-            services.AddScoped<IBookmakerRepository, InMemoryBookmakerRepository>();
-            services.AddScoped<IUserRepository, InMemoryUserRepository>();
-            services.AddScoped<IUserService, UserService>();
             services.AddMvc();
-
             var builder = new ContainerBuilder();
-            builder.RegisterModule<CommandModule>();
+            builder.RegisterModule(new ContainerModule(Configuration));
             builder.Populate(services);
             ApplicationContainer = builder.Build();
 

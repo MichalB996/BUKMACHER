@@ -2,6 +2,7 @@
 using SportsBetting.Infrastructure.Commands;
 using SportsBetting.Infrastructure.Commands.User;
 using SportsBetting.Infrastructure.Services;
+using SportsBetting.Infrastructure.Settings;
 using System.Threading.Tasks;
 
 namespace SportsBetting.Controllers
@@ -10,7 +11,7 @@ namespace SportsBetting.Controllers
     public class UserController : ApiControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService, ICommandDispatcher commandDispatcher) : base(commandDispatcher)
+        public UserController(IUserService userService, ICommandDispatcher commandDispatcher, GeneralSettings settings) : base(commandDispatcher)
         {
             _userService = userService;
         }

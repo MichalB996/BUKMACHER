@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SportsBetting.Core.Repositories
 {
-    public interface IPlayerRepository
+    public interface IPlayerRepository : IRepository
     {
         Task<Player> GetAsync(string email);
         Task<Player> GetAsync(Guid Id);

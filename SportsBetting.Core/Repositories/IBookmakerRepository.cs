@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SportsBetting.Core.Repositories
 {
-    public interface IBookmakerRepository
+    public interface IBookmakerRepository : IRepository
     {
         Task<Bookmaker> GetAsync(string email);
         Task<Bookmaker> GetAsync(Guid Id);
